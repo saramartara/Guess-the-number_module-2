@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Adivina el número</title>
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <h1>vamoos! :)</h1>
+    <h1 class="title">Adivina el número</h1>
+    <form action="" method="GET" class="form">
+      <label class="item form__item--label" for="num"
+        >Introduce aquí tu número:
+      </label>
+      <input
+        id="num"
+        class="item form__item--number"
+        type="number"
+        min="0"
+        max="100"
+      />
+      <input class="btn" type="button" value="Prueba" />
+      <input
+        class="item form__item--clue"
+        type="text"
+        name="clue"
+        value="Pista:Escribe el número y dale a Prueba"
+      />
+      <input
+        class="item form__item--counter"
+        type="text"
+        name="counter"
+        value="Número de intentos: 0"
+      />
+    </form>
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
