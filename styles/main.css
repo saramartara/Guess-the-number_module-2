@@ -35,4 +35,7 @@
   margin: 3px 20px;
   padding: 3px;
 }
+.randomNumber {
+  background-color: pink;
+}
 /* No he podido anidar clases, creo que no reconoce &, porque no hay starter kit? */
