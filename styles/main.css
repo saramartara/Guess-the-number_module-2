@@ -12,9 +12,18 @@
   align-items: flex-start;
 }
 .form__number {
-  background-color: pink;
+  background-color: lightgray;
+  opacity: 0.5;
   border: none;
   border-radius: 3px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.32);
+}
+.form__btn {
+  background-color: aquamarine;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.32);
 }
 .form__clue {
   width: 80%;
@@ -26,4 +35,4 @@
   margin: 3px 20px;
   padding: 3px;
 }
-/* No he podido anidar clases, creo que no reconoce & */
+/* No he podido anidar clases, creo que no reconoce &, porque no hay starter kit? */
