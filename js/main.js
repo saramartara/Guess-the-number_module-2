@@ -25,6 +25,9 @@ const NumberElement = document.querySelector('.js-inputNumber');
 function handleComparation{
     let NumberValue = NumberElement.value;
     if (NumberValue === randomNumber) {
+        clueElement.value = '¿Has ganado campeona!';
+    }
+    else if (numberValue <= randomNumber){
 
     }
     
