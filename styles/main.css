@@ -1,5 +1,4 @@
 * {
-  background-color: pink;
   margin: 0;
   box-sizing: border-box;
 }
@@ -11,5 +10,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 20px;
 }
+.form__number {
+  background-color: pink;
+  border: none;
+  border-radius: 3px;
+}
+.form__clue {
+  width: 80%;
+}
+.form__counter {
+  width: 80%;
+}
+.item {
+  margin: 3px 20px;
+  padding: 3px;
+}
+/* No he podido anidar clases, creo que no reconoce & */
