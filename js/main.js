@@ -1,36 +1,51 @@
 'use strict';
 
-// cuando se recarga la página se genera un número aleatorio entre 1-100 y se muestra en consola.
-// += se muestra en .js-clue Pista: Escribe un número y dale a Prueba
-const clueElement = document.querySelector('.js-clue');
+//Data:
+// número usuaria
+// número aleatorio
+//si recojo el value del input al cargar la página, estará vacío
+// tengo que recogerlo cuando la usuaria haga click
+
+const numberInput = document.querySelector('.js-number');
+const testButton = document.querySelector('.js-button');
+const tipElement = document.querySelector('.js-clue');
+console.log(tipElement);
+// const userNumberValue = numberInput.value;
 
 function getRandomNumber(max) {
-  clueElement.value = 'Pista: Escribe el número y dale a Prueba';
   return Math.ceil(Math.random() * max);
 }
 
-let randomNumber = getRandomNumber(100);
-console.log(randomElement);
-
-// let randomNumber = getRandomNumber(100);
-// console.log(randomNumber);
-
-window.addEventListener('load', getRandomNumber);
-
-// CUANDO la usuaria clika el botón de prueba, recoger el número escrito en '.js-inputNumber', regogerlo y compararlo con RandomNumber.
-
-const buttonElement = document.querySelector('.js-bnt')
-const NumberElement = document.querySelector('.js-inputNumber');
-
-function handleComparation{
-    let NumberValue = NumberElement.value;
-    if (NumberValue === randomNumber) {
-        clueElement.value = '¿Has ganado campeona!';
-    }
-    else if (numberValue <= randomNumber){
-
-    }
-    
+function renderTip(message) {
+  tipElement.innerHTML = message;
 }
 
-buttonElement.addEventListener('click', handleComparation);
+function handleClickTestButton(event) {
+  //steps:
+  //1. take user number
+  //2. check if it is higher
+  //3. check if it is lower
+  //4. check if it is equal
+  //5.check number is in range
+  //6. Render message
+
+  const userNumberValue = numberInput.value;
+  const numberValue = parseInt(userNumberValue); // ojo! parseInt para que pueda comparar número con número
+
+  if (userNumberValue === '') {
+    renderTip('El número debe estar entre 1 y 100');
+  } else if (userNumberValue < 1 || userNumberValue > 100) {
+    renderTip('El número debe estar entre 1 y 100');
+  } else if (userNumberValue > randomNumber) {
+    renderTip('Demasiado alto');
+  } else if (userNumberValue < randomNumber) {
+    renderTip('Demasiado bajo');
+  } else if (userNumberValue === randomNumber) {
+    renderTip('¡Has ganado, campeona!');
+  }
+}
+
+const randomNumber = getRandomNumber(100);
+console.log(randomNumber);
+
+testButton.addEventListener('click', handleClickTestButton);
